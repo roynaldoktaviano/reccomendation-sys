@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mx-auto">
+    <section class="items-center justify-center h-screen mx-10">
+        <div class="text-center flex-1">
+            <h1 class="text-5xl text-prim-purple font-raleway font-bold">Optimize your Website, Grow your business</h1>
+            <p class="text-2xl text-prim-yellow font-raleway mt-4">Optimize your website today and watch your business thrive!</p>
+        </div>
+        <div class="text-center mt-12">
+            <form method="post" action="/diagnose">
+                {% csrf_token %}
+                <input type="text" class="border-prim-purple rounded-md font-raleway w-1/2 mt-5 text-prim-yellow font-bold" placeholder="Input Url" name="url" value="">
+                
+                <button class="text-sm font-raleway bg-prim-yellow px-4 h-10 text-prim-white rounded-md ml-4" name="scan">Scan Website</button>
+            </form>
+            
+        </div>
+    </section>
+</div>
+{% endblock %}

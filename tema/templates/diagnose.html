@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mx-auto">
+    <section class="items-center justify-center h-screen mx-10">
+        <div class="text-center mt-12">
+            <h1 class="font-bold text-4xl">{{hasil}}</h1>
+            <table class="mt-10 border-2">
+                <tr>
+                    <th>Loading Time</th>
+                    <th class="w-96">Title</th>
+                    <th class="w-96">Description</th>
+                    <th class="w-96">Heading 1</th>
+                    <th class="w-96">Images</th>
+                    <th class="w-96">OG</th>
+                    <th>Hasil</th>
+                </tr>
+                <tr>
+                    <td>{{loadstatus}} ({{time}} s)</td>
+                    <td>{{title}}</td>
+                    <td>{{status_desc}}</td>
+                    <td>{{h1}}</td>
+                    <td>{{image}} </td>
+                    <td>{{og}}</td>
+                    <td>{{hasil}}</td>
+                </tr>
+            </table>
+            
+        </div>
+    </section>
+</div>
+{% endblock %}
