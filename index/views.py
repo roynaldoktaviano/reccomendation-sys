@@ -20,6 +20,7 @@ has_title = 0
 has_alt = 0
 load_status = 0
 load_num = 0
+desc_con = ''
 
 
 @csrf_exempt
@@ -53,7 +54,7 @@ def diagnose(request):
         status_desc = 0
     else:
         desc_con = soup.find(
-            'meta', attrs={'name': 'd   escription'}).get('content')
+            'meta', attrs={'name': 'description'}).get('content')
         jumlah_desc = len(desc_con)
         # Cek panjang karakter meta description
         # Jika dibawah 120 maka terlalu pendek, jika diataas 156 terlalu panjang
@@ -242,8 +243,8 @@ def diagnose(request):
 
     return render(request, 'diagnose.html', {
         'h1': tag_h1,
-        'title': has_title,
-        'desc': desc,
+        'title': title,
+        'desc': desc_con,
         'status_desc': status_desc,
         'image': has_alt,
         'og': has_og,
